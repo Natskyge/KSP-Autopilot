@@ -1,4 +1,5 @@
 class stage:
+
     def __init__(self, fuel_mass, mass, fuel_ejection, thrust):
         self.fuel_mass = fuel_mass
         self.mass = mass
@@ -11,7 +12,12 @@ stages = []
 
 
 for i in range(stage_number):
-    stages.append(stage(int(raw_input("Fuel mass: ")), int(raw_input("Mass: ")), int(raw_input("Fuel ejection: ")), int(raw_input('Thrust: '))))
+    stages.append(stage(
+        int(raw_input("Fuel mass: ")), \
+        int(raw_input("Mass: ")), \
+        int(raw_input("Fuel ejection: ")), \
+        int(raw_input('Thrust: '))
+        ))
 
 
 for i in range(stage_number):
