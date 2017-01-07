@@ -20,7 +20,8 @@ for i in range(stage_number):
     stages.append(stage(
         int(raw_input("Fuel mass: ")), \
         int(raw_input("Isp: ")), \
-        int(raw_input('Thrust: '))))
+        int(raw_input('Thrust: '))
+))
 
 
 # open file to write the data too and declare current mass of rocket
