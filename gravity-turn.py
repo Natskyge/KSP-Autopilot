@@ -35,16 +35,19 @@ for i in range(len(stages)):
     remaing_fuel = stages[i].fuel_mass
     while remaing_fuel > 0:
 
-        # calculate acceleration when there is less fuel left than expelled per second
+        # calculate acceleration when there is less fuel left
+        # than expelled per second
         if remaing_fuel <= stages[i].flow_rate:
-            force = stages[i].thrust * 1000 * (remaing_fuel / stages[i].flow_rate)
+            force = stages[i].thrust * 1000 * \
+                    (remaing_fuel / stages[i].flow_rate)
             mass = current_mass
             remaing_fuel -= remaing_fuel
             current_mass -= remaing_fuel
             output = '%f \n' % float(force/mass)
             data.write(output)
 
-        # calculate acceleration when there is more fuel than expelled per second
+        # calculate acceleration when there is more fuel
+        # than expelled per second
         else:
             force = stages[i].thrust * 1000
             mass = current_mass
