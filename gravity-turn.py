@@ -5,29 +5,25 @@ class stage:
         self.fuel_mass = fuel_mass
         self.isp = isp
         self.thrust = thrust
-        self.flow_rate = thrust / ( isp * 9.82 )
+        self.flow_rate = thrust / (isp * 9.82)
 
 
 # get the number of stages, initialize the list for storing the specs and
 # get the total mass
-stage_number = int(raw_input('number of stages: '))
+stage_number = int(input('number of stages: '))
 stages = []
-total_mass = int(raw_input('Total mass: '))
-
+total_mass = int(input('Total mass: '))
 
 # the inputs for the specs of the rocket
 for i in range(stage_number):
     stages.append(stage(
-        int(raw_input("Fuel mass: ")), \
-        int(raw_input("Isp: ")), \
-        int(raw_input('Thrust: '))
-))
-
+        int(input("Fuel mass: ")),
+        int(input("Isp: ")),
+        int(input('Thrust: '))))
 
 # open file to write the data too and declare current mass of rocket
 data = open('data.txt', 'w')
 current_mass = total_mass
-
 
 for i in range(len(stages)):
 
@@ -56,7 +52,5 @@ for i in range(len(stages)):
             output = '%f \n' % float(force/mass)
             data.write(output)
 
-
 # closing file
 data.close()
-
