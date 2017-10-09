@@ -10,16 +10,16 @@ class stage:
 
 # get the number of stages, initialize the list for storing the specs and
 # get the total mass
-stage_number = int(input('number of stages: '))
+stage_number = int(input('number of stages           : '))
 stages = []
-total_mass = int(input('Total mass: '))
+total_mass = int(input('Total mass of rocket in kg : '))
 
 # the inputs for the specs of the rocket
 for i in range(stage_number):
     stages.append(stage(
-        int(input("Fuel mass: ")),
-        int(input("Isp: ")),
-        int(input('Thrust: '))))
+        int(input("Fuel mass for stage %d in kg: " % (i+1))),
+        int(input("Isp for stage %d            : " % (i+1))),
+        int(input('Thrust for stage %d in kN   : ' % (i+1)))))
 
 # open file to write the data too and declare current mass of rocket
 data = open('data.txt', 'w')
